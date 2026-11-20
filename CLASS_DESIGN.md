@@ -1,3 +1,14 @@
+Class: ReadingList
+
+Attributes: 
+- ArrayList<Book>: ArrayList
+
+Relationships:
+- Has Book Objects
+
+Responsibilities:
+- Manage Book Objects and sort them by the appropriate attribute
+
 Class: Book
 
 Attributes:
@@ -10,7 +21,7 @@ Attributes:
 - readingStatus: String
 
 Relationships:
-- N/A
+- Organized in the ReadingList Class
 
 Responsibilities:
 - Store information about books
@@ -22,13 +33,14 @@ Class: Journal
 Attributes:
 - title: String
 - type: String
+- content: String
 
 Relationships:
 - N/A
 
 Responsibilities:
 - ability to update title and type
-- HTML should handle text?
+- Update and store content
 
 Class: Story
 
@@ -36,6 +48,7 @@ Attributes:
 - title: String
 - shortDescription: String
 - ArrayList<StoryCharacter>: ArrayList
+- ArrayList<Chapter>: ArrayList
 
 Relationships:
 - Has Chapters and Characters
@@ -50,22 +63,22 @@ Class: Chapter
 Attributes:
 - title: String
 - type: String
+- content: String
 
 Relationships:
 - Is used in the Story class
 
 Responsibilities:
 - ability to edit attributes
+- Stores and updates content
 
 Class: StoryCharacter
 
 Attributes:
 - name: String
-- type: String
-- age: int
-- hairColor: String
-- height: double
-- mainCharacter: Boolean
+- characterType: String
+- description: String
+- isMainCharacter: boolean
 
 Relationships:
 - Is used in the Story class
@@ -84,5 +97,4 @@ Relationships:
 Responsibilities:
 - Asks user for input regarding Stories, Books, Journals, Chapters, and StoryCharacters
 - Updates information in the appropriate class(s)
-- Tests if classes work as they should
 - Handles bad input
